@@ -166,8 +166,8 @@ function updateSwipeFeedback(dx){
   swipeFeedback.style.opacity=String(amount);
   swipeUnknown.style.opacity=dx<0?String(amount):"0";
   swipeKnown.style.opacity=dx>0?String(amount):"0";
-  swipeUnknown.style.transform=dx<0?\`scale(\${0.9+amount*.1}) rotate(-8deg)\`:"scale(.9) rotate(-8deg)";
-  swipeKnown.style.transform=dx>0?\`scale(\${0.9+amount*.1}) rotate(8deg)\`:"scale(.9) rotate(8deg)";
+  swipeUnknown.style.transform=dx<0?`scale(${0.9+amount*.1}) rotate(-8deg)`:"scale(.9) rotate(-8deg)";
+  swipeKnown.style.transform=dx>0?`scale(${0.9+amount*.1}) rotate(8deg)`:"scale(.9) rotate(8deg)";
 }
 function clearSwipeFeedback(){
   swipeFeedback.style.opacity="0";
@@ -184,7 +184,7 @@ card.addEventListener("pointermove",e=>{
   if(!state.dragging)return;
   state.dragX=e.clientX-state.startX;
   const rotate=state.dragX/18;
-  card.style.transform=\`translateX(\${state.dragX}px) rotate(\${rotate}deg)\`;
+  card.style.transform=`translateX(${state.dragX}px) rotate(${rotate}deg)`;
   card.style.opacity=String(1-Math.min(Math.abs(state.dragX)/500,.35));
   updateSwipeFeedback(state.dragX);
 });
