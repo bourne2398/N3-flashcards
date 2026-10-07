@@ -1,0 +1,10 @@
+{
+  "name":"N3 Kanji Flashcards",
+  "short_name":"N3 Kanji",
+  "start_url":"./",
+  "display":"standalone",
+  "background_color":"#f7f8fa",
+  "theme_color":"#f7f8fa",
+  "description":"JLPT N3 Kanji Part 1 flashcards with offline study.",
+  "icons":[{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}
