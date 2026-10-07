@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+  <meta name="theme-color" content="#f7f8fa">
+  <meta name="description" content="JLPT N3 Kanji flashcards — Part 1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <title>N3 Kanji Flashcards</title>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">JLPT N3</p>
+        <h1>Kanji Flashcards</h1>
+      </div>
+      <button id="installBtn" class="icon-btn" type="button" aria-label="Install app" hidden>＋</button>
+    </header>
+
+    <section class="stats" aria-label="Progress">
+      <div><strong id="remainingCount">100</strong><span>Learning</span></div>
+      <div><strong id="knownCount">0</strong><span>Knew</span></div>
+      <div><strong id="unknownCount">0</strong><span>Don't know</span></div>
+    </section>
+
+    <nav class="tabs" aria-label="Card groups">
+      <button class="tab active" data-view="learning">Learning</button>
+      <button class="tab" data-view="known">✓ Knew</button>
+      <button class="tab" data-view="unknown">× Don't know</button>
+    </nav>
+
+    <section class="study-area">
+      <div id="emptyState" class="empty-state" hidden>
+        <div class="empty-icon">✓</div>
+        <h2 id="emptyTitle">All done</h2>
+        <p id="emptyText">You have finished this group.</p>
+        <button id="resetBtn" class="secondary-btn" type="button">Reset progress</button>
+      </div>
+
+      <div id="cardStage" class="card-stage">
+        <div id="card" class="flashcard" tabindex="0" role="button" aria-label="Flashcard. Tap to flip.">
+          <div class="card-inner">
+            <article class="card-face front">
+              <span class="face-label">KANJI</span>
+              <div id="kanji" class="kanji">丁</div>
+              <p class="tap-hint">Tap to reveal</p>
+            </article>
+            <article class="card-face back">
+              <span class="face-label">READING & MEANING</span>
+              <div id="reading" class="reading">ちょう</div>
+              <div class="meaning" id="meaning">street</div>
+              <div class="reading-grid">
+                <div><span>Onyomi</span><b id="onyomi">チョウ・テイ</b></div>
+                <div><span>Kunyomi</span><b id="kunyomi">ひのと</b></div>
+              </div>
+              <p class="tap-hint">Tap to return</p>
+            </article>
+          </div>
+        </div>
+        <div id="swipeHint" class="swipe-hint">← Don't know &nbsp; · &nbsp; Knew →</div>
+      </div>
+    </section>
+
+    <section class="controls" aria-label="Card controls">
+      <button id="dontKnowBtn" class="review-btn dont" type="button"><span>×</span> Don't know</button>
+      <button id="knewBtn" class="review-btn knew" type="button"><span>✓</span> Knew</button>
+    </section>
+
+    <footer>
+      <button id="resetAllBtn" class="text-btn" type="button">Reset all progress</button>
+      <span>Part 1 · 100 kanji</span>
+    </footer>
+  </main>
+  <script src="app.js" defer></script>
+</body>
+</html>
