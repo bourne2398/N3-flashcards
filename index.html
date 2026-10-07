@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=yes">
   <meta name="theme-color" content="#f7f8fa">
   <meta name="description" content="JLPT N3 Kanji flashcards — Part 1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -39,7 +39,7 @@
         <div class="empty-icon">✓</div>
         <h2 id="emptyTitle">All done</h2>
         <p id="emptyText">You have finished this group.</p>
-        <button id="resetBtn" class="secondary-btn" type="button">Reset progress</button>
+        <button id="resetBtn" class="secondary-btn" type="button">Reset all progress</button>
       </div>
 
       <div id="cardStage" class="card-stage">
@@ -62,11 +62,15 @@
             </article>
           </div>
         </div>
-        <div id="swipeHint" class="swipe-hint">← Don't know &nbsp; · &nbsp; Knew →</div>
+        <div id="swipeFeedback" class="swipe-feedback" aria-hidden="true">
+  <span id="swipeUnknown">× DON'T KNOW</span>
+  <span id="swipeKnown">✓ KNEW</span>
+</div>
+<div id="swipeHint" class="swipe-hint">← Don't know &nbsp; · &nbsp; Knew →</div>
       </div>
     </section>
 
-    <section class="controls" aria-label="Card controls">
+    <section id="controls" class="controls" aria-label="Card controls">
       <button id="dontKnowBtn" class="review-btn dont" type="button"><span>×</span> Don't know</button>
       <button id="knewBtn" class="review-btn knew" type="button"><span>✓</span> Knew</button>
     </section>
