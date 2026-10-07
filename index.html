@@ -1,85 +1,133 @@
 <!doctype html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=yes">
-  <meta name="theme-color" content="#f7f8fa">
-  <meta name="description" content="JLPT N3 Kanji flashcards — Part 1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+  <meta name="theme-color" content="#e8f4f8">
+  <meta name="description" content="JLPT Sentence Builder - Drag & Drop Quiz">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <link rel="manifest" href="manifest.json">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <title>N3 Kanji Flashcards</title>
+  <title>N3 Sentence Builder</title>
 </head>
 <body>
-  <main class="app-shell">
-    <header class="topbar">
-      <div>
-        <p class="eyebrow">JLPT N3</p>
-        <h1>Kanji Flashcards</h1>
+  <div id="app">
+    <!-- HOME SCREEN -->
+    <section id="homeScreen" class="screen active">
+      <div class="home-hero">
+        <div class="sakura"></div>
+        <div class="logo-circle">文</div>
+        <h1>文をつくろう</h1>
+        <p class="subtitle">Sentence Builder · JLPT</p>
       </div>
-      <button id="installBtn" class="icon-btn" type="button" aria-label="Install app" hidden>＋</button>
-    </header>
-
-    <section class="stats" aria-label="Progress">
-      <div><strong id="remainingCount">100</strong><span>Learning</span></div>
-      <div><strong id="knownCount">0</strong><span>Knew</span></div>
-      <div><strong id="unknownCount">0</strong><span>Don't know</span></div>
+      <div class="home-actions">
+        <button id="playBtn" class="btn-primary">
+          <span class="btn-icon">▶</span> プレイ
+        </button>
+        <button id="howtoBtn" class="btn-secondary">
+          <span class="btn-icon">？</span> 遊び方
+        </button>
+        <button id="historyBtn" class="btn-secondary">
+          <span class="btn-icon">📊</span> 履歴
+        </button>
+      </div>
     </section>
 
-    <nav class="tabs" aria-label="Card groups">
-      <button class="tab active" data-view="learning">Learning</button>
-      <button class="tab" data-view="known">✓ Knew</button>
-      <button class="tab" data-view="unknown">× Don't know</button>
-    </nav>
-
-    <section class="study-area">
-      <div id="emptyState" class="empty-state" hidden>
-        <div class="empty-icon">✓</div>
-        <h2 id="emptyTitle">All done</h2>
-        <p id="emptyText">You have finished this group.</p>
-        <button id="resetBtn" class="secondary-btn" type="button">Reset all progress</button>
-      </div>
-
-      <div id="cardStage" class="card-stage">
-        <div id="card" class="flashcard" tabindex="0" role="button" aria-label="Flashcard. Tap to flip.">
-          <div class="card-inner">
-            <article class="card-face front">
-              <span class="face-label">KANJI</span>
-              <div id="kanji" class="kanji">丁</div>
-              <p class="tap-hint">Tap to reveal</p>
-            </article>
-            <article class="card-face back">
-              <span class="face-label">READING & MEANING</span>
-              <div id="reading" class="reading">ちょう</div>
-              <div class="meaning" id="meaning">street</div>
-              <div class="reading-grid">
-                <div><span>Onyomi</span><b id="onyomi">チョウ・テイ</b></div>
-                <div><span>Kunyomi</span><b id="kunyomi">ひのと</b></div>
-              </div>
-              <p class="tap-hint">Tap to return</p>
-            </article>
-          </div>
+    <!-- HOW TO SCREEN -->
+    <section id="howtoScreen" class="screen">
+      <header class="screen-header">
+        <button class="back-btn" data-back="home">←</button>
+        <h2>遊び方</h2>
+      </header>
+      <div class="howto-content">
+        <div class="howto-card">
+          <div class="step-num">1</div>
+          <p>下の単語を<strong>ドラッグ</strong>して空欄に入れます</p>
         </div>
-        <div id="swipeFeedback" class="swipe-feedback" aria-hidden="true">
-  <span id="swipeUnknown">× DON'T KNOW</span>
-  <span id="swipeKnown">✓ KNEW</span>
-</div>
-<div id="swipeHint" class="swipe-hint">← Don't know &nbsp; · &nbsp; Knew →</div>
+        <div class="howto-card">
+          <div class="step-num">2</div>
+          <p>正しい順番に並べて「チェック」を押します</p>
+        </div>
+        <div class="howto-card">
+          <div class="step-num">3</div>
+          <p>ライフは<strong>3つ</strong>。間違えると1つ減ります</p>
+        </div>
+        <div class="howto-card">
+          <div class="step-num">4</div>
+          <p>制限時間は<strong>2分</strong>です。急いで！</p>
+        </div>
+        <div class="howto-card">
+          <div class="step-num">5</div>
+          <p>全問正解で<strong>花丸</strong>がもらえます ◎</p>
+        </div>
       </div>
     </section>
 
-    <section id="controls" class="controls" aria-label="Card controls">
-      <button id="dontKnowBtn" class="review-btn dont" type="button"><span>×</span> Don't know</button>
-      <button id="knewBtn" class="review-btn knew" type="button"><span>✓</span> Knew</button>
+    <!-- HISTORY SCREEN -->
+    <section id="historyScreen" class="screen">
+      <header class="screen-header">
+        <button class="back-btn" data-back="home">←</button>
+        <h2>履歴</h2>
+      </header>
+      <div id="historyList" class="history-list"></div>
     </section>
 
-    <footer>
-      <button id="resetAllBtn" class="text-btn" type="button">Reset all progress</button>
-      <span>Part 1 · 100 kanji</span>
-    </footer>
-  </main>
+    <!-- GAME SCREEN -->
+    <section id="gameScreen" class="screen">
+      <header class="game-header">
+        <div class="lives" id="livesDisplay">
+          <span class="heart">♥</span><span class="heart">♥</span><span class="heart">♥</span>
+        </div>
+        <div class="timer-wrap">
+          <div class="timer-bar"><div id="timerFill" class="timer-fill"></div></div>
+          <span id="timerText">2:00</span>
+        </div>
+        <div class="score-wrap">
+          <span id="scoreText">0</span> pt
+        </div>
+      </header>
+
+      <div class="progress-dots" id="progressDots"></div>
+
+      <div class="question-area">
+        <div id="sentenceSlots" class="sentence-slots"></div>
+        <div id="wordBank" class="word-bank"></div>
+      </div>
+
+      <div class="game-actions">
+        <button id="checkBtn" class="btn-primary" disabled>チェック</button>
+        <button id="skipBtn" class="btn-ghost">スキップ</button>
+      </div>
+    </section>
+
+    <!-- RESULT MODAL -->
+    <div id="resultModal" class="modal">
+      <div class="modal-card">
+        <div id="hanaMaru" class="hana-maru" hidden>
+          <div class="flower">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <div class="maru-text">花丸</div>
+        </div>
+        <h2 id="resultTitle">おつかれさま！</h2>
+        <div class="result-stats">
+          <div><strong id="finalScore">0</strong><span>スコア</span></div>
+          <div><strong id="finalCorrect">0</strong><span>正解</span></div>
+          <div><strong id="finalTime">0:00</strong><span>残り時間</span></div>
+        </div>
+        <button id="playAgainBtn" class="btn-primary">もう一度</button>
+        <button id="homeFromResultBtn" class="btn-secondary">ホームへ</button>
+      </div>
+    </div>
+
+    <!-- FEEDBACK TOAST -->
+    <div id="toast" class="toast"></div>
+  </div>
   <script src="app.js" defer></script>
 </body>
 </html>
