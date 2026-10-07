@@ -1,13 +1,13 @@
 const CARDS = [
-{kanji:"丁",reading:"ちょう",meaning:"street",onyomi:"チョウ・テイ",kunyomi:"ひのと"},
-{kanji:"側",reading:"そく・かわ",meaning:"direction / side",onyomi:"ソク",kunyomi:"かわ・そば"},
+{kanji:"丁",reading:"ちょう",meaning:"block / ward",onyomi:"チョウ・テイ",kunyomi:"ひのと"},
+{kanji:"側",reading:"そく・かわ",meaning:"side",onyomi:"ソク",kunyomi:"かわ・そば"},
 {kanji:"助",reading:"たすける",meaning:"help",onyomi:"ジョ",kunyomi:"たすける・たすかる"},
 {kanji:"各",reading:"おのおの",meaning:"each",onyomi:"カク",kunyomi:"おのおの"},
 {kanji:"央",reading:"おう",meaning:"central",onyomi:"オウ",kunyomi:"—"},
 {kanji:"島",reading:"しま",meaning:"island",onyomi:"トウ",kunyomi:"しま"},
 {kanji:"政",reading:"せい",meaning:"politics",onyomi:"セイ・ショウ",kunyomi:"まつりごと"},
 {kanji:"改",reading:"あらためる",meaning:"change",onyomi:"カイ",kunyomi:"あらためる・あらたまる"},
-{kanji:"札",reading:"ふだ",meaning:"ticket",onyomi:"サツ",kunyomi:"ふだ"},
+{kanji:"札",reading:"ふだ",meaning:"tag / label / bill",onyomi:"サツ",kunyomi:"ふだ"},
 {kanji:"次",reading:"つぎ",meaning:"next",onyomi:"ジ・シ",kunyomi:"つぎ・つぐ"},
 {kanji:"浅",reading:"あさい",meaning:"shallow",onyomi:"セン",kunyomi:"あさい"},
 {kanji:"玉",reading:"たま",meaning:"ball",onyomi:"ギョク",kunyomi:"たま"},
@@ -18,7 +18,7 @@ const CARDS = [
 {kanji:"身",reading:"み",meaning:"body",onyomi:"シン",kunyomi:"み"},
 {kanji:"録",reading:"ろく",meaning:"record",onyomi:"ロク",kunyomi:"しるす"},
 {kanji:"停",reading:"てい",meaning:"stop",onyomi:"テイ",kunyomi:"—"},
-{kanji:"健",reading:"すこやか",meaning:"health",onyomi:"ケン",kunyomi:"すこやか"},
+{kanji:"健",reading:"すこやか",meaning:"healthy / health",onyomi:"ケン",kunyomi:"すこやか"},
 {kanji:"両",reading:"りょう",meaning:"both",onyomi:"リョウ",kunyomi:"—"},
 {kanji:"億",reading:"おく",meaning:"hundred million",onyomi:"オク",kunyomi:"—"},
 {kanji:"努",reading:"つとめる",meaning:"diligent / strive",onyomi:"ド",kunyomi:"つとめる"},
@@ -27,7 +27,7 @@ const CARDS = [
 {kanji:"州",reading:"しゅう",meaning:"state",onyomi:"シュウ",kunyomi:"す"},
 {kanji:"靴",reading:"くつ",meaning:"shoes",onyomi:"カ",kunyomi:"くつ"},
 {kanji:"放",reading:"はなす",meaning:"release",onyomi:"ホウ",kunyomi:"はなす・はなつ・はなれる"},
-{kanji:"材",reading:"ざい",meaning:"village / material",onyomi:"ザイ",kunyomi:"—"},
+{kanji:"材",reading:"ざい",meaning:"material / lumber",onyomi:"ザイ",kunyomi:"—"},
 {kanji:"歯",reading:"は",meaning:"tooth",onyomi:"シ",kunyomi:"は"},
 {kanji:"浴",reading:"あびる",meaning:"bathe",onyomi:"ヨク",kunyomi:"あびる・あびせる"},
 {kanji:"王",reading:"おう",meaning:"king",onyomi:"オウ",kunyomi:"—"},
@@ -48,18 +48,18 @@ const CARDS = [
 {kanji:"得",reading:"える",meaning:"profit / obtain",onyomi:"トク",kunyomi:"える・うる"},
 {kanji:"救",reading:"すくう",meaning:"save",onyomi:"キュウ",kunyomi:"すくう"},
 {kanji:"束",reading:"たば",meaning:"bunch",onyomi:"ソク",kunyomi:"たば"},
-{kanji:"歴",reading:"れき",meaning:"curriculum / history",onyomi:"レキ",kunyomi:"—"},
+{kanji:"歴",reading:"れき",meaning:"history / record / experience",onyomi:"レキ",kunyomi:"—"},
 {kanji:"消",reading:"きえる",meaning:"disappear",onyomi:"ショウ",kunyomi:"きえる・けす"},
 {kanji:"球",reading:"たま",meaning:"globe / ball",onyomi:"キュウ",kunyomi:"たま"},
 {kanji:"科",reading:"か",meaning:"department",onyomi:"カ",kunyomi:"—"},
 {kanji:"紀",reading:"き",meaning:"chronicle",onyomi:"キ",kunyomi:"—"},
 {kanji:"腸",reading:"ちょう",meaning:"intestines",onyomi:"チョウ",kunyomi:"はらわた"},
 {kanji:"角",reading:"かど",meaning:"corner",onyomi:"カク",kunyomi:"かど・つの"},
-{kanji:"輪",reading:"わ",meaning:"wheel",onyomi:"リン",kunyomi:"わ"},
+{kanji:"輪",reading:"わ",meaning:"wheel / ring / circle",onyomi:"リン",kunyomi:"わ"},
 {kanji:"関",reading:"せき",meaning:"involve",onyomi:"カン",kunyomi:"せき・かかわる"},
 {kanji:"号",reading:"ごう",meaning:"number",onyomi:"ゴウ",kunyomi:"—"},
-{kanji:"司",reading:"つかさ",meaning:"rule / administer",onyomi:"シ",kunyomi:"つかさ"},
-{kanji:"予",reading:"よ",meaning:"beforehand",onyomi:"ヨ",kunyomi:"—"},
+{kanji:"司",reading:"つかさ",meaning:"administer / official",onyomi:"シ",kunyomi:"つかさ"},
+{kanji:"予",reading:"よ",meaning:"beforehand / in advance",onyomi:"ヨ",kunyomi:"あらかじめ"},
 {kanji:"児",reading:"こ",meaning:"child",onyomi:"ジ・ニ",kunyomi:"こ"},
 {kanji:"勇",reading:"いさむ",meaning:"courage",onyomi:"ユウ",kunyomi:"いさむ"},
 {kanji:"告",reading:"つげる",meaning:"inform",onyomi:"コク",kunyomi:"つげる"},
@@ -77,20 +77,20 @@ const CARDS = [
 {kanji:"訓",reading:"くん",meaning:"training",onyomi:"クン",kunyomi:"おしえる・よむ"},
 {kanji:"辞",reading:"やめる",meaning:"resign",onyomi:"ジ",kunyomi:"やめる"},
 {kanji:"陸",reading:"りく",meaning:"land",onyomi:"リク・ロク",kunyomi:"—"},
-{kanji:"変",reading:"かわる",meaning:"strange / change",onyomi:"ヘン",kunyomi:"かわる・かえる"},
+{kanji:"変",reading:"かわる",meaning:"change / strange",onyomi:"ヘン",kunyomi:"かわる・かえる"},
 {kanji:"夫",reading:"おっと",meaning:"husband",onyomi:"フ・フウ",kunyomi:"おっと"},
 {kanji:"争",reading:"あらそう",meaning:"dispute",onyomi:"ソウ",kunyomi:"あらそう"},
 {kanji:"全",reading:"すべて",meaning:"whole",onyomi:"ゼン",kunyomi:"まったく・すべて"},
 {kanji:"勝",reading:"かつ",meaning:"victory",onyomi:"ショウ",kunyomi:"かつ・まさる"},
-{kanji:"周",reading:"まわり",meaning:"surrounds",onyomi:"シュウ",kunyomi:"まわり・まわる"},
+{kanji:"周",reading:"まわり",meaning:"around / surrounding",onyomi:"シュウ",kunyomi:"まわり・まわる"},
 {kanji:"孫",reading:"まご",meaning:"grandchild",onyomi:"ソン",kunyomi:"まご"},
-{kanji:"希",reading:"き",meaning:"hope",onyomi:"キ",kunyomi:"まれ"},
+{kanji:"希",reading:"き",meaning:"hope / rare",onyomi:"キ",kunyomi:"まれ"},
 {kanji:"念",reading:"ねん",meaning:"wish",onyomi:"ネン",kunyomi:"—"},
 {kanji:"散",reading:"ちる",meaning:"scatter",onyomi:"サン",kunyomi:"ちる・ちらす・ちらかす"},
 {kanji:"板",reading:"いた",meaning:"board",onyomi:"ハン・バン",kunyomi:"いた"},
 {kanji:"殺",reading:"ころす",meaning:"kill",onyomi:"サツ・セツ・サイ",kunyomi:"ころす"},
 {kanji:"清",reading:"きよい",meaning:"pure",onyomi:"セイ・ショウ",kunyomi:"きよい・きよめる"},
-{kanji:"申",reading:"もうす",meaning:"be called / say",onyomi:"シン",kunyomi:"もうす"},
+{kanji:"申",reading:"もうす",meaning:"say / state (humble)",onyomi:"シン",kunyomi:"もうす"},
 {kanji:"種",reading:"たね",meaning:"kind / type",onyomi:"シュ",kunyomi:"たね"},
 {kanji:"級",reading:"きゅう",meaning:"rank",onyomi:"キュウ",kunyomi:"—"},
 {kanji:"航",reading:"こう",meaning:"navigate",onyomi:"コウ",kunyomi:"—"},
@@ -98,7 +98,7 @@ const CARDS = [
 {kanji:"農",reading:"のう",meaning:"agriculture",onyomi:"ノウ",kunyomi:"—"},
 {kanji:"陽",reading:"よう",meaning:"sunshine",onyomi:"ヨウ",kunyomi:"ひ"},
 {kanji:"岩",reading:"いわ",meaning:"boulder",onyomi:"ガン",kunyomi:"いわ"},
-{kanji:"岸",reading:"きし",meaning:"beach / shore",onyomi:"ガン",kunyomi:"きし"}
+{kanji:"岸",reading:"きし",meaning:"shore / bank / coast",onyomi:"ガン",kunyomi:"きし"}
 ];
 
 const state={view:"learning",flipped:false,index:0,dragX:0,dragging:false};
@@ -107,6 +107,9 @@ const status={...saved};
 
 const $=id=>document.getElementById(id);
 const card=$("card");
+const swipeFeedback=$("swipeFeedback");
+const swipeUnknown=$("swipeUnknown");
+const swipeKnown=$("swipeKnown");
 
 function ids(view){
   return CARDS.map((_,i)=>i).filter(i=>{
@@ -145,6 +148,7 @@ function render(){
   card.classList.remove("flipped");
   card.style.transform="";
   card.style.opacity="1";
+  clearSwipeFeedback();
 }
 function save(){localStorage.setItem("n3-progress",JSON.stringify(status));updateStats()}
 function move(result){
@@ -157,6 +161,19 @@ function move(result){
   card.style.opacity="0";
   setTimeout(()=>{state.index++;render()},180);
 }
+function updateSwipeFeedback(dx){
+  const amount=Math.min(Math.abs(dx)/90,1);
+  swipeFeedback.style.opacity=String(amount);
+  swipeUnknown.style.opacity=dx<0?String(amount):"0";
+  swipeKnown.style.opacity=dx>0?String(amount):"0";
+  swipeUnknown.style.transform=dx<0?\`scale(\${0.9+amount*.1}) rotate(-8deg)\`:"scale(.9) rotate(-8deg)";
+  swipeKnown.style.transform=dx>0?\`scale(\${0.9+amount*.1}) rotate(8deg)\`:"scale(.9) rotate(8deg)";
+}
+function clearSwipeFeedback(){
+  swipeFeedback.style.opacity="0";
+  swipeUnknown.style.opacity="0";
+  swipeKnown.style.opacity="0";
+}
 function flip(){if(!state.dragging) {state.flipped=!state.flipped;card.classList.toggle("flipped",state.flipped)}}
 
 card.addEventListener("pointerdown",e=>{
@@ -167,16 +184,24 @@ card.addEventListener("pointermove",e=>{
   if(!state.dragging)return;
   state.dragX=e.clientX-state.startX;
   const rotate=state.dragX/18;
-  card.style.transform=`translateX(${state.dragX}px) rotate(${rotate}deg)`;
+  card.style.transform=\`translateX(\${state.dragX}px) rotate(\${rotate}deg)\`;
   card.style.opacity=String(1-Math.min(Math.abs(state.dragX)/500,.35));
+  updateSwipeFeedback(state.dragX);
 });
 card.addEventListener("pointerup",e=>{
   if(!state.dragging)return;
   const dx=state.dragX; state.dragging=false; card.classList.remove("dragging");
-  if(Math.abs(dx)>90){move(dx>0?"known":"unknown")}
-  else{card.style.transform="";card.style.opacity="1";flip()}
+  if(Math.abs(dx)>90){clearSwipeFeedback();move(dx>0?"known":"unknown")}
+  else{card.style.transform="";card.style.opacity="1";clearSwipeFeedback();flip()}
 });
-card.addEventListener("pointercancel",()=>{state.dragging=false;card.classList.remove("dragging");card.style.transform="";card.style.opacity="1"});
+card.addEventListener("pointercancel",()=>{
+  state.dragging=false;card.classList.remove("dragging");card.style.transform="";card.style.opacity="1";clearSwipeFeedback();
+});
+card.addEventListener("keydown",e=>{
+  if(e.key==="Enter"||e.key===" "){e.preventDefault();flip()}
+  if(e.key==="ArrowLeft"){e.preventDefault();move("unknown")}
+  if(e.key==="ArrowRight"){e.preventDefault();move("known")}
+});
 $("knewBtn").onclick=()=>move("known");
 $("dontKnowBtn").onclick=()=>move("unknown");
 
