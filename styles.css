@@ -53,3 +53,31 @@ footer{display:flex;justify-content:space-between;align-items:center;margin-top:
 @media (min-width:700px){.app-shell{padding-top:28px}.study-area{min-height:500px}.flashcard{width:350px;height:410px}}
 @media (max-height:680px){.app-shell{padding-top:10px}.topbar{padding-bottom:8px}.tabs{margin-bottom:10px}.study-area{min-height:340px}.flashcard{height:320px;min-height:300px}.kanji{font-size:105px}.controls{margin-top:2px}}
 @media (prefers-reduced-motion:reduce){.card-inner,.flashcard{transition:none!important}}
+/* Swipe decision feedback */
+.swipe-feedback{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:5;
+  opacity:0;
+  transition:opacity .08s linear;
+}
+.swipe-feedback span{
+  position:absolute;
+  top:28px;
+  padding:8px 12px;
+  border:2px solid currentColor;
+  border-radius:10px;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.08em;
+  background:rgba(255,255,255,.92);
+  box-shadow:0 3px 10px rgba(0,0,0,.08);
+  transition:opacity .08s linear,transform .08s linear;
+}
+#swipeUnknown{left:18px;color:#b43b45;opacity:0;transform:scale(.9) rotate(-8deg)}
+#swipeKnown{right:18px;color:#19764b;opacity:0;transform:scale(.9) rotate(8deg)}
+.flashcard{touch-action:none}
+@media (prefers-reduced-motion:reduce){
+  .swipe-feedback span{transition:none}
+}
